@@ -1,0 +1,27 @@
+{
+
+ 
+    "testuser1":{
+        "userid":"standard_user",
+        "password":"secret_sauce"
+      
+    },
+    "testuser2":{
+        "userid":"locked_out_user",
+        "password":"secret_sauce"
+      
+    },
+    "testuser3":{
+        "userid":"problem_user",
+        "password":"secret_sauce"
+      
+    },
+    "testuser4":{
+        "userid":"performance_glitch_user",
+        "password":"secret_sauce"
+      
+    }
+    
+    
+    
+}

@@ -1,0 +1,21 @@
+{
+  "name": "cypresstest",
+  "version": "1.0.0",
+  "description": "my first automation in cypress",
+  "scripts": {
+    "cypress-open": "npm cypress open",
+    "runtest": "npx cypress run --spec 'cypress/e2e/appLsauceDemo.feature' --browser 'chrome' --headed"
+  },
+  "author": "Divya",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^12.17.0",
+    "cypress-cucumber-preprocessor": "^4.3.1",
+    "cypress-mochawesome-reporter": "^3.5.1",
+    "cypress-xpath": "^2.0.1"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": false,
+    "step_definitions": "cypress/support/step_definitions/"
+  }
+}
