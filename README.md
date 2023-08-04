@@ -24,13 +24,10 @@ write your test cases in feature files and it's relevant code in step definition
 
 Project Structure
 
-cypress/
-
-  ├── e2e/   # Test files go here
-  ├── fixtures/ #Test data goes here
-  ├── reports/  #Test reports go here
-  ├── screenshots/ #In case of failure, screenshots go here
-  ├── support/   #locators, stepdefinition, pages go here
+cypress/e2e/ # Test files go here
+cypress/fixtures/ #Test data goes here
+cypress/reports/  #Test reports go here
+cypress/support/   #locators, stepdefinition, pages go here
 
 
 Running Tests
