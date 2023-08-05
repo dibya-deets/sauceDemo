@@ -19,56 +19,63 @@ class SauceDemo {
   LoginError() {
     // if(cy.ClickItemIfVisible(".error-message-container error")){
     //  cy.xpath('//h3[@data-test="error"]').asss
-    assert(cy.ClickItemIfVisible(".error-message-container error"))
+    assert(cy.ClickItemIfVisible(locate.ERROR_MESSAGE))
 
   }
   SuccessfulLogin() {
     cy.title().should('include', 'Swag Labs');
   }
-  BuyAnItem(additem) {
-    cy.xpath(`//div[@class="inventory_item_name"][contains(text(), '${additem}')]`).click();
-    cy.xpath('//button[contains(text(),"Add to cart")]').click();
+  VerifyItemPrice(getprice,getItem) {
+    cy.xpath(locate.ITEM(getItem)).should('be.visible');
+    cy.xpath(locate.ITEM_PRICE(getItem)).invoke('text').then((text1)=>{
+      expect(text1).to.eq(getprice);
+})
+  }
+
+  AddItemToCart(addItem){
+    cy.xpath(locate.ADD_ITEM_TO_CART(addItem)).click();
   }
   ClickBacktoItems() {
-    cy.get('#back-to-products').click();
+    cy.get(locate.BACK_TO_ITEMS).click();
   }
-  ValidateCheckout() {
-    cy.get('.shopping_cart_link').click();
-    cy.get('#checkout').click();
-    cy.get('#first-name').clear().type("xxxx");
-    cy.get('#last-name').clear().type("yyyy");
-    cy.get('#postal-code').clear().type("ttt");
-    cy.get('#continue').click();
+ ValidateCheckout(user) {
+  let fn = "firstName";
+  let ln = "LastName";
+  let pstcd="postCode";
+
+  let firstName=userdata[user][fn]
+  let lastName=userdata[user][ln]
+  let postCode=userdata[user][pstcd]
+
+  
+    cy.get(locate.ADD_TO_CART_BUTTON).click();
+    cy.get(locate.CHECKOUT_BUTTON).click();
+    cy.get(locate.FIRST_NAME_FIELD).clear().type(firstName);
+    cy.get(locate.LAST_NAME_FIELD).clear().type(lastName);
+    cy.get(locate.POSTAL_CODE).clear().type(postCode);
+    cy.get(locate.CONTINUE_BUTTON).click();
   }
   ValidateCost = () => {
     let getsubtotal = 0;
     let tax = 0;
     var total = 2;
-    cy.xpath('//div[@class="summary_subtotal_label"]/text()[2]').invoke('text').then((text1) => {
+    cy.xpath(locate.SUBTOTAL).invoke('text').then((text1) => {
       getsubtotal = Number(text1);
     })
-    cy.xpath('//div[@class="summary_tax_label"]/text()[2]').invoke('text').then((text2) => {
+    cy.xpath(locate.TAX).invoke('text').then((text2) => {
       tax = Number(text2);
     })
-    cy.xpath('//div[@class="summary_info_label summary_total_label"]/text()[2]').invoke('text').then((text3) => {
+    cy.xpath(locate.TOTAL_PRICE).invoke('text').then((text3) => {
       total = Number(text3);
       expect(total).to.equal(getsubtotal + tax)
     })
 
   }
   FinishOrder(){
-    cy.get('#finish').click();
-    assert(cy.ClickItemIfVisible(".checkout_complete_container"),"Successfully Placed the order");
+    cy.get(locate.FINISH_BUTTON).click();
+    assert(cy.ClickItemIfVisible(locate.CHECKOUT_SUCCESS),"Successfully Placed the order");
   }
 
 }
 
-
 export default SauceDemo;
-
-
-
-
-
-
-

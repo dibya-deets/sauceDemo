@@ -4,7 +4,7 @@
   "description": "my first automation in cypress",
   "scripts": {
     "cypress-open": "npm cypress open",
-    "runtest": "npx cypress run --spec 'cypress/e2e/appLsauceDemo.feature' --browser 'chrome' --headed"
+    "runtest": "npx cypress run --spec 'cypress/e2e/sauceDemo.feature' --browser 'chrome' --headed"
   },
   "author": "Divya",
   "license": "ISC",

@@ -3,22 +3,36 @@
  
     "testuser1":{
         "userid":"standard_user",
-        "password":"secret_sauce"
+        "password":"secret_sauce",
+        "firstName": "MONICA",
+        "LastName":"GELLAR",
+        "postCode":"AAAA"
       
     },
     "testuser2":{
         "userid":"locked_out_user",
-        "password":"secret_sauce"
+        "password":"secret_sauce",
+        "firstName": "CHANDLAR",
+        "LastName":"BING",
+        "postCode":"BBBB"
+      
       
     },
     "testuser3":{
         "userid":"problem_user",
-        "password":"secret_sauce"
+        "password":"secret_sauce",
+        "firstName": "RACHEL",
+        "LastName":"GREEN",
+        "postCode":"CCCC"
       
     },
     "testuser4":{
         "userid":"performance_glitch_user",
-        "password":"secret_sauce"
+        "password":"secret_sauce",
+        "firstName": "JOEY",
+        "LastName":"TRIBIANI",
+        "postCode":"CCCC"
+      
       
     }
     

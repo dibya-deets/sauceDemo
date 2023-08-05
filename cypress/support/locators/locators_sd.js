@@ -1,3 +1,19 @@
 export const USER_ID='#user-name';
 export const PASSWORD='#password';
-export const LOGIN_BUTTON='#login-button'
+export const LOGIN_BUTTON='#login-button';
+export const ITEM=(getItem)=>`//div[@class="inventory_item_name"][contains(text(), '${getItem}')]`;
+export const ITEM_PRICE=(getItem)=>`//div[@class="inventory_item_name"][contains(text(), '${getItem}')]/parent::a/parent::div/following-sibling::div/div`;
+export const ADD_ITEM_TO_CART=(addItem)=>`//div[@class="inventory_item_name"][contains(text(), '${addItem}' )]/parent::a/parent::div/following-sibling::div/button`;
+export const BACK_TO_ITEMS='#back-to-products';
+export const ADD_TO_CART_BUTTON='.shopping_cart_link';
+export const CHECKOUT_BUTTON='#checkout';
+export const FIRST_NAME_FIELD='#first-name';
+export const LAST_NAME_FIELD='#last-name';
+export const POSTAL_CODE='#postal-code';
+export const CONTINUE_BUTTON='#continue';
+export const SUBTOTAL='//div[@class="summary_subtotal_label"]/text()[2]';
+export const TAX='//div[@class="summary_tax_label"]/text()[2]';
+export const TOTAL_PRICE='//div[@class="summary_info_label summary_total_label"]/text()[2]';
+export const FINISH_BUTTON='#finish';
+export const CHECKOUT_SUCCESS='.checkout_complete_container';
+export const ERROR_MESSAGE='.error-message-container error';
